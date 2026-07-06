@@ -1,0 +1,87 @@
+name: tf-brain
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core / compatibility
+  - python=3.9.23
+  - pip
+  - setuptools
+  - wheel
+
+  # Jupyter 
+  - jupyterlab
+  - notebook
+  - ipykernel
+
+  # Scientific stack (NumPy pinned for TensorFlow 2.9 compatibility)
+  - numpy=1.23.5
+  - scipy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - pillow
+  - nibabel
+
+  # TensorFlow 2.9 is the last release with native-Windows NVIDIA GPU support.
+  # It requires CUDA 11.2 and cuDNN 8.1 regardless of the maximum CUDA
+  # version reported by the installed NVIDIA driver.
+  - cudatoolkit=11.2
+  - cudnn=8.1
+
+  # System dependency used by audio/video pipelines
+  - ffmpeg
+
+  - spacy
+
+  - pip:
+      # ===== TensorFlow =====
+      - "numpy<2"
+      - tensorflow==2.9.0
+      - keras==2.9.0
+      - tensorboard==2.9.1
+      - tensorflow-estimator==2.9.0
+      - tensorflow-io-gcs-filesystem==0.31.0
+      - tensorflow-addons==0.17.1
+      - protobuf==3.19.6
+
+      # ===== NLP / Hugging Face =====
+      - nltk
+      - transformers
+      - datasets
+      - tokenizers
+      - sentence-transformers
+      - sentencepiece
+      - safetensors
+      - regex
+      - accelerate
+      - huggingface-hub
+
+      # ===== Computer Vision =====
+      - opencv-python
+      - scikit-image
+      - imageio
+      - pytesseract
+
+      # ===== Audio =====
+      - librosa
+      - soundfile
+      - audioread
+      - resampy
+      - soxr
+      - pydub
+      - python-ffmpeg
+
+      # ===== PyTorch + YOLO =====
+      - torch==2.6.0
+      - torchvision==0.21.0
+      - ultralytics==8.3.28
+      - ultralytics-thop==2.0.11
+
+      # ===== Utilities  =====
+      - tqdm
+      - pyyaml
+      - requests
+      - beautifulsoup4
+      - plotly
+      - openpyxl
