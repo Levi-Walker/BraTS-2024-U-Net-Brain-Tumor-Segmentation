@@ -1,2 +1,31 @@
-# BraTS data is large and its license does not permit redistribution.
+# Local dataset
 /BraTS2024-BraTS-GLI-TrainingData/
+
+# Large and intermediate training artifacts
+/results/checkpoints/
+/results/history/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python caches and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Editors and IDEs
+.idea/
+.vscode/
+
+# OS metadata
+.DS_Store
+Thumbs.db
